@@ -32,7 +32,7 @@ const viewmodel =
 	redraw(): void
 	{
 		const rating = this.parkRating.total;
-		this.currentRatingLabel.set(`Current park rating: ${rating}/999`);
+		this.currentRatingLabel.set(`Clasificación del parque actual: ${rating}/999`);
 
 		const effects = this.parkRating.effects.sort((l, r) => (r.impact - l.impact) || (l.order - r.order));
 		const target = this.items.get();
@@ -76,19 +76,19 @@ function window(): WindowTemplate
 		.listview({
 			content: b => b
 			.column({
-				header: "Name",
+				header: "Nombre",
 				width: "35%"
 			})
 			.column({
-				header: "Value",
+				header: "Valor",
 				width: "110px"
 			})
 			.column({
-				header: "Impact",
+				header: "Impacto",
 				width: "45px"
 			})
 			.column({
-				header: "Notes",
+				header: "Notas",
 				width: "65%"
 			}),
 			items: viewmodel.items,
@@ -101,7 +101,7 @@ function window(): WindowTemplate
 			padding: [2, 10]
 		})
 		.label({
-			text: "github.com/Basssiiie/OpenRCT2-ParkRatingInspector",
+			text: "github.com/Basssiiie/OpenRCT2-ParkRatingInspector ~ traducido por Wirlie",
 			alignment: "centred",
 			disabled: true,
 			height: "12px",
@@ -124,12 +124,12 @@ export function main(): void
 		return;
 	}
 
-	ui.registerMenuItem("Inspect park rating", () =>
+	ui.registerMenuItem("Inspeccionar clasificación de parque", () =>
 	{
 		if (!context.apiVersion || context.apiVersion < requiredApiVersion)
 		{
-			const title = "Please update the game!";
-			const message = "\nThe version of OpenRCT2 you are currently playing is too old for this plugin.";
+			const title = "¡Por favor actualiza el juego!";
+			const message = "\nLa versión de OpenRCT2 que estás usando es muy antiguo para este plugin.";
 
 			ui.showError(title, message);
 			console.log(`[ParkRatingInspector] ${title} ${message}`);
