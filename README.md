@@ -1,3 +1,12 @@
+# Traducción al Español
+
+Plugin traducido al Español por Wirlie, este fork no agrega alguna función adicional, el objetivo de este fork es proporcionar una traducción al Español para la comunidad de OpenRCT2 de habla hispana.
+
+<img src="https://user-images.githubusercontent.com/7508197/220538378-424391ac-4c9d-424d-9f3b-cd247b1f40e8.png" width="700px" />
+
+----
+**README original:**
+
 # ParkRatingInspector plugin for OpenRCT2
 
 This plugin helps you break down your park rating and figure out why it is so low or so high. The inspector will show each of the different possible influences and how much they are currently affecting your rating, which should help you figure out where you can improve.
