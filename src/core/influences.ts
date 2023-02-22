@@ -40,10 +40,10 @@ export const Influences: Record<string, Influence> =
 		if (current.active)
 		{
 			current.impact = -100;
-			current.name = "Difficulty";
+			current.name = "Dificultad";
 			current.value = "enabled";
 			current.maximum = null;
-			current.note = "Setting for 'difficult park rating'";
+			current.note = "Configuración para 'calificación de parque difícil'";
 		}
 		return true;
 	},
@@ -60,10 +60,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = guestCount;
 		current.active = true;
 		current.impact = Math.floor(Math.min(2000, guestCount) / 13);
-		current.name = "Guests";
+		current.name = "Invitados";
 		current.value = `${guestCount}/2000`;
 		current.maximum = 153;
-		current.note = "+1 for every 13 guests, max. +153";
+		current.note = "+1 por cada 13 invitados, máx. +153";
 		return true;
 	},
 
@@ -87,10 +87,10 @@ export const Influences: Record<string, Influence> =
 		current.impact = Math.floor(2 * Math.min(250, (happyGuests * 300) / totalGuests));
 
 		const percentage = Math.floor((happyGuests / totalGuests) * 100);
-		current.name = "Happy guests";
+		current.name = "Invitados felices";
 		current.value = `${happyGuests}/${totalGuests} (${percentage}%)`;
 		current.maximum = 500;
-		current.note = "+6 for every percent, max. +500 (83%)";
+		current.note = "+6 por cada porcentaje, máx. +500 (83%)";
 		return true;
 	},
 
@@ -106,10 +106,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = lostGuests;
 		current.active = true;
 		current.impact = (lostGuests > 25) ? ((lostGuests - 25) * -7) : 0;
-		current.name = "Lost guests";
+		current.name = "Invitados perdidos";
 		current.value = `${lostGuests}`;
 		current.maximum = null;
-		current.note = "-7 per lost guest after the first 25";
+		current.note = "-7 por cada invitado perdido después de los primeros 25";
 		return true;
 	},
 
@@ -131,10 +131,10 @@ export const Influences: Record<string, Influence> =
 
 		const averageUptime = Math.floor(totalUptime / rideCount);
 		current.impact = (averageUptime * 2);
-		current.name = "Average ride uptime";
+		current.name = "Tiempo actividad promedio atracción";
 		current.value = `${averageUptime}%`;
 		current.maximum = 200;
-		current.note = "+2 for every percent, max. +200";
+		current.note = "+2 por cada porciento, máx. +200";
 		return true;
 	},
 
@@ -154,10 +154,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = averageExcitement;
 		current.active = true;
 		current.impact = getAverageRatingImpact(averageExcitement, 46);
-		current.name = "Average ride excitement";
+		current.name = "Emoción de atracción promedio";
 		current.value = `${(averageExcitement * 0.08).toFixed(2)}/3.68`;
 		current.maximum = 50;
-		current.note = "Closer is better, max. +50";
+		current.note = "Más cerca es mejor, máx. +50";
 		return true;
 	},
 
@@ -177,10 +177,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = averageIntensity;
 		current.active = true;
 		current.impact = getAverageRatingImpact(averageIntensity, 65);
-		current.name = "Average ride intensity";
+		current.name = "Intensidad de atracción promedio";
 		current.value = `${(averageIntensity * 0.08).toFixed(2)}/5.20`;
 		current.maximum = 50;
-		current.note = "Closer is better, max. +50";
+		current.note = "Más cerca es mejor, máx. +50";
 		return true;
 	},
 
@@ -196,10 +196,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = totalExcitement;
 		current.active = true;
 		current.impact = Math.floor(Math.min(totalExcitement, 1000) / 10);
-		current.name = "Total ride excitement";
+		current.name = "Emoción total de atracciones";
 		current.value = `${(totalExcitement * 0.08).toFixed(1)}/80.0`;
 		current.maximum = 100;
-		current.note = "Max. +100";
+		current.note = "Máx. +100";
 		return true;
 	},
 
@@ -215,10 +215,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = totalIntensity;
 		current.active = true;
 		current.impact = Math.floor(Math.min(totalIntensity, 1000) / 10);
-		current.name = "Total ride intensity";
+		current.name = "Intensidad total de atracciones";
 		current.value = `${(totalIntensity * 0.08).toFixed(1)}/80.0`;
 		current.maximum = 100;
-		current.note = "Max. +100";
+		current.note = "Máx. +100";
 		return true;
 	},
 
@@ -234,10 +234,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = litterCount;
 		current.active = true;
 		current.impact = (-4 * Math.min(150, litterCount));
-		current.name = "Amount of litter";
+		current.name = "Cantidad de basura";
 		current.value = `${litterCount}/150`;
 		current.maximum = null;
-		current.note = "-4 per piece of litter older than 3 minutes";
+		current.note = "-4 por pieza de basura mayor a 3 minutos";
 		return true;
 	},
 
@@ -253,10 +253,10 @@ export const Influences: Record<string, Influence> =
 		current.cache = effect;
 		current.active = true;
 		current.impact = -effect;
-		current.name = "Casualty penalty";
+		current.name = "Penalización casual";
 		current.value = `${effect}/1000`;
 		current.maximum = null;
-		current.note = "-200 per crashed train until -500, -25 per drowned guest";
+		current.note = "-200 por tren accidentado hasta -500, -25 por invitado ahogado";
 		return true;
 	}
 };
